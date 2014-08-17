@@ -45,7 +45,7 @@ Web Debugging Workshop for Newbies
 
 ## Misc
 
-* [User-Agent Overriding](misc/ua-overriding.html)
+* User-Agent Overriding - Find a UA inspection site and see how it works
 
 ## Appendix
 
