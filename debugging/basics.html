@@ -1,0 +1,39 @@
+---
+---
+
+<label>I want fibonacci #<input type="number" id="nth"></label>
+
+<button type="button" id="calculate">Calculate</button>
+
+<span id="result"></span>
+
+<script>
+var numbers = [1,1];
+
+function fibonacci(nth) {
+  var i = nth - 1;
+
+  if (numbers[i] == undefined) {
+    var answer = fibonacci(nth - 1) + fibonacci(nth - 2);
+    numbers[i] = answer;
+  }
+
+  return numbers[i]
+}
+
+$(function() {
+  var $input = $("#nth");
+  var $result = $("#result");
+
+  $("#calculate").click(function(e) {
+    var nth = parseInt($input.val(), 10);
+
+    if (Number.isNaN(nth) || nth <= 0) {
+      $result.text("Positive number, please.");
+    } else {
+      $result.text(fibonacci(nth));
+    }
+  });
+});
+
+</script>

@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>{% if page.title %}{{ page.title }}{% else %}Untitled{% endif %}</title>
+
+    <script src="/js/jquery-2.1.1.min.js"></script>
   </head>
   <body>
 
     {{ content }}
+
+    {% include back.html %}
 
   </body>
 

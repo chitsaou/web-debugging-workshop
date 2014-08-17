@@ -29,10 +29,10 @@ Web Debugging Workshop for Newbies
 
 ## JavaScript Debugging
 
-* [Basics](js/basics.html)
-* [DOM Manipulation](js/dom.html)
-* [XHR Breakpoints](js/xhr.html)
-* [DOM Global Events](js/dom.html)
+* [Basics](debugging/basics.html)
+* [DOM Manipulation](debugging/dom-maipulation.html)
+* [DOM Global Events](debugging/dom-events.html)
+* [XHR Breakpoints](debugging/xhr.html)
 
 ## Networking
 
