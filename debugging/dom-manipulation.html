@@ -1,0 +1,50 @@
+---
+---
+
+<a href="#" id="add">+ New Node</a>
+
+<ul id="outer"><!-- Add DOM change breakpoint here -->
+
+</ul>
+
+
+<script>
+
+var $outer = $("#outer")
+var $origin = $("<li class='inner' data-value><span class='text'></span> <a href='#' data-remove>&times;</a> <a href='#' data-increase>++</a></li>");
+
+var counter = 0;
+
+function addNode(event) {
+  event.preventDefault();
+
+  var $newNode = $origin.clone();
+  $newNode.find(".text").text(counter);
+  $newNode.get(0).dataset.value = counter;
+
+  $outer.append($newNode);
+  counter++;
+}
+
+function removeNode(event) {
+  event.preventDefault();
+  $(event.target).parent(".inner").remove();
+}
+
+function increase(event) {
+  event.preventDefault();
+
+  var $display = $(event.target).siblings(".text");
+  var newValue = parseInt($display.text(), 10) + 1;
+  $display.text(newValue);
+  $(event.target).parent().get(0).dataset.value = newValue;
+}
+
+$("#add").click(addNode);
+
+$("#outer").delegate(".inner a[data-remove]", "click", removeNode);
+
+$("#outer").delegate(".inner a[data-increase]", "click", increase);
+
+
+</script>

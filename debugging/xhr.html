@@ -1,0 +1,12 @@
+---
+---
+
+<button type="button" id="ping">Ping</button>
+
+<script>
+$("#ping").click(function(e) {
+  $.ajax("/debugging/ping.json").done(function(data) {
+    console.log(data);
+  });
+});
+</script>
